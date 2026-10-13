@@ -1,0 +1,12 @@
+# Every registered technique on the same index, two retrieval modes.
+name: compare-techniques
+corpus: energia
+question_set: energia-perguntas
+techniques: all
+chunking: {strategy: fixed, size: 300, overlap: 50}
+retrieval_modes: [dense, hybrid]
+k: 4
+seeds: 42
+language: pt
+evaluation: {judge: false}
+# max_budget_usd: 2.00      # stop before the next run once this much has been spent

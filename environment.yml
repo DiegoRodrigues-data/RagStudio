@@ -1,0 +1,26 @@
+# Portable environment: only the interpreter comes from conda; everything else is pinned pip.
+# Do not regenerate with `conda env export`. Same principle as ../JudDoc_Ex/Backend/environment.yml.
+name: ragstudio
+channels:
+  - defaults
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy==2.2.6
+      - pandas==2.3.3
+      - pyarrow==21.0.0
+      - duckdb==1.4.1
+      - faiss-cpu==1.15.1          # store: faiss
+      - chromadb==1.5.9            # store: chroma (heavy: pulls onnxruntime)
+      - requests==2.32.5
+      - pyyaml==6.0.3
+      - matplotlib==3.10.6
+      - jinja2==3.1.6
+      - pytest==8.3.4
+      - ruff==0.14.0
+      - docling==2.64.0            # PDF -> Markdown (heavy: pulls torch; needed to import PDF folders)
+      - sentence-transformers==5.7.0   # reranker: cross_encoder
+      # Kept inside the range Docling 2.64 accepts; a bare `pip install sentence-transformers` upgrades them past it.
+      - transformers==4.57.6
+      - huggingface_hub==0.36.2

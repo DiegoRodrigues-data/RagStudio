@@ -1,0 +1,42 @@
+[project]
+name = "ragstudio"
+version = "0.1.0"
+description = "One environment to implement, run, compare and validate RAG techniques reproducibly."
+requires-python = ">=3.11"
+dependencies = ["numpy", "pandas", "requests", "pyyaml", "matplotlib", "jinja2"]
+
+[project.optional-dependencies]
+duckdb = ["duckdb"]
+faiss = ["faiss-cpu"]
+chroma = ["chromadb"]
+parquet = ["pyarrow"]
+pdf = ["docling"]
+rerank = ["sentence-transformers"]
+dev = ["pytest", "ruff"]
+
+[project.scripts]
+ragstudio = "ragstudio.cli:main"
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["ragstudio*"]
+
+[tool.setuptools.package-data]
+ragstudio = ["config/*.ini", "providers/*.json", "db/migrations/*.sql", "reports/*.html"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+extend-exclude = ["docs/legacy", "ragkit"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+ignore = ["E501", "B008"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+filterwarnings = ["ignore::DeprecationWarning:matplotlib.*", "ignore:.*deprecated.*:DeprecationWarning"]

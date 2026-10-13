@@ -1,0 +1,10 @@
+# Offline in seconds: RAGSTUDIO_PROVIDER=mock python -m ragstudio experiments run --file configs/examples/quick_mock.yaml
+# Requires the demo corpus and question set (see README, "Quick start").
+name: quick-mock
+description: Three techniques on the demo corpus with the deterministic mock provider.
+corpus: energia
+question_set: energia-perguntas
+techniques: [naive, hyde, multi_query]
+chunking: {strategy: fixed, size: 300, overlap: 50}
+k: 3
+seeds: 42

@@ -1,0 +1,13 @@
+numpy>=1.26
+pandas>=2.2
+requests>=2.31
+pyyaml>=6.0
+matplotlib>=3.8
+jinja2>=3.1
+pytest>=8.0
+ruff>=0.6
+docling>=2.64        # PDF import; heavy (torch). Remove if you only use .md/.txt/.json
+sentence-transformers>=5,<6   # cross_encoder reranker
+transformers<5               # Docling 2.64 needs transformers < 5.9 and huggingface_hub < 1
+huggingface_hub<1
+# optional: duckdb faiss-cpu chromadb (index stores) pyarrow

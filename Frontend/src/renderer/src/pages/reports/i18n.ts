@@ -1,0 +1,101 @@
+import type { PageDict } from '@/components/shared/use-page-t'
+
+const pt = {
+  'pick.title': 'Runbooks',
+  'pick.empty': 'Nenhum runbook. Crie e execute um em Experimentos.',
+  'pick.runs': '{done}/{total} runs',
+  'pick.hint': 'Selecione um ou mais runbooks com runs concluídos.',
+  'tabs.report': 'Relatório HTML',
+  'tabs.figures': 'Figuras',
+  'tabs.tables': 'Tabelas',
+  'tabs.exports': 'Exportações',
+  'report.title': 'Relatório autocontido',
+  'report.description':
+    'Um arquivo HTML em inglês com tabela por técnica, figuras, runs, disponibilidade de métricas, correlações, setup experimental e verificação das evidências.',
+  'report.name': 'Título do relatório',
+  'report.generate': 'Gerar relatório',
+  'report.done': 'Relatório gerado com {n} figuras',
+  'report.skipped': 'Figuras puladas por falta de dados',
+  'figures.title': 'Figuras para publicação',
+  'figures.description':
+    'PNG em 300 dpi, SVG e PDF, com rótulos em inglês. Figura sem dados é pulada.',
+  'figures.generate': 'Gerar figuras',
+  'figures.empty': 'Nenhuma figura gerada ainda.',
+  'figures.skipped': 'Puladas',
+  'tables.title': 'Tabela de resultados',
+  'tables.format': 'Formato',
+  'tables.by': 'Agrupar por',
+  'tables.generate': 'Gerar tabela',
+  'tables.save': 'Salvar em arquivo',
+  'tables.saved': 'Tabela salva',
+  'tables.copied': 'Tabela copiada',
+  'exports.title': 'Exportação analítica',
+  'exports.description':
+    'Dados para análise externa. Célula vazia significa que a métrica não pôde ser medida.',
+  'exports.table': 'Tabela',
+  'exports.table.runs': 'runs · uma linha por run',
+  'exports.table.questions': 'questions · uma linha por run × pergunta',
+  'exports.table.characteristics': 'characteristics · com o perfil do documento',
+  'exports.format': 'Formato',
+  'exports.generate': 'Exportar',
+  'exports.done': '{n} linhas exportadas',
+  'exports.registered': 'Arquivos registrados',
+  'exports.kind': 'Tipo',
+  'exports.path': 'Arquivo',
+  'exports.hash': 'SHA-256',
+  'exports.created': 'Criado',
+  'exports.none': 'Nenhum arquivo registrado.',
+  errorTitle: 'Falha ao consultar o backend'
+} as const
+
+export type RepKey = keyof typeof pt
+
+const en: Record<RepKey, string> = {
+  'pick.title': 'Runbooks',
+  'pick.empty': 'No runbook. Create and run one in Experiments.',
+  'pick.runs': '{done}/{total} runs',
+  'pick.hint': 'Select one or more runbooks with completed runs.',
+  'tabs.report': 'HTML report',
+  'tabs.figures': 'Figures',
+  'tabs.tables': 'Tables',
+  'tabs.exports': 'Exports',
+  'report.title': 'Self-contained report',
+  'report.description':
+    'One HTML file in English with the table by technique, figures, runs, metric availability, correlations, experimental setup and evidence verification.',
+  'report.name': 'Report title',
+  'report.generate': 'Generate report',
+  'report.done': 'Report generated with {n} figures',
+  'report.skipped': 'Figures skipped for lack of data',
+  'figures.title': 'Publication figures',
+  'figures.description':
+    'PNG at 300 dpi, SVG and PDF, with English labels. A figure without data is skipped.',
+  'figures.generate': 'Generate figures',
+  'figures.empty': 'No figure generated yet.',
+  'figures.skipped': 'Skipped',
+  'tables.title': 'Results table',
+  'tables.format': 'Format',
+  'tables.by': 'Group by',
+  'tables.generate': 'Generate table',
+  'tables.save': 'Save to file',
+  'tables.saved': 'Table saved',
+  'tables.copied': 'Table copied',
+  'exports.title': 'Analytical export',
+  'exports.description':
+    'Data for external analysis. An empty cell means the metric could not be measured.',
+  'exports.table': 'Table',
+  'exports.table.runs': 'runs · one row per run',
+  'exports.table.questions': 'questions · one row per run × question',
+  'exports.table.characteristics': 'characteristics · with the document profile',
+  'exports.format': 'Format',
+  'exports.generate': 'Export',
+  'exports.done': '{n} rows exported',
+  'exports.registered': 'Registered files',
+  'exports.kind': 'Kind',
+  'exports.path': 'File',
+  'exports.hash': 'SHA-256',
+  'exports.created': 'Created',
+  'exports.none': 'No file registered.',
+  errorTitle: 'Backend request failed'
+}
+
+export const dict: PageDict<RepKey> = { 'pt-BR': pt, en }

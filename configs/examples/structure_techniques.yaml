@@ -1,0 +1,12 @@
+# Techniques that need a specific index: parent-child chunking and contextual enrichment.
+# Run each block as its own runbook (an index axis applies to every technique in the file).
+name: parent-child
+corpus: energia
+question_set: energia-perguntas
+techniques: [naive, parent_child]
+chunking: {strategy: parent_child, size: 200, overlap: 30, parent_size: 700}
+k: 3
+# For contextual retrieval use instead:
+#   techniques: [naive, contextual_retrieval]
+#   chunking: {strategy: fixed, size: 300, overlap: 50}
+#   enrich: contextual        # one LLM call per chunk at indexing time

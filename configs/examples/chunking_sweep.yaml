@@ -1,0 +1,17 @@
+# One technique, several indexing configurations: how do chunk size and strategy change the results?
+name: chunking-sweep
+corpus: energia
+question_set: energia-perguntas
+techniques:
+  - naive
+  - name: mmr_rag
+    grid: {lambda_: [0.3, 0.6, 0.9]}        # one run per value
+  - name: sentence_window
+    params: {window: 2}
+chunking:
+  - {strategy: fixed, size: 200, overlap: 30}
+  - {strategy: fixed, size: 400, overlap: 60}
+  - {strategy: sentence, size: 300, overlap: 80}
+  - {strategy: markdown_headers, size: 600, overlap: 0}
+k: [3, 5]
+seeds: 42

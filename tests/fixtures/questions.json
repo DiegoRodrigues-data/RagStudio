@@ -1,0 +1,27 @@
+{
+  "name": "energia-perguntas",
+  "language": "pt",
+  "questions": [
+    {"code": "Q1", "text": "Qual é o limite de Betz para o aproveitamento da energia do vento?",
+     "expected_answer": "O limite de Betz estabelece que o aproveitamento máximo teórico é de 59,3%.",
+     "answer_type": "extraction",
+     "gold_passages": [{"document_id": "energia-eolica", "text": "estabelece que o aproveitamento máximo teórico é de 59,3%"}]},
+    {"code": "Q2", "text": "Qual resolução da ANEEL regulamentou a geração distribuída no Brasil?",
+     "expected_answer": "A Resolução Normativa 482 da ANEEL, publicada em 2012.",
+     "answer_type": "extraction",
+     "gold_passages": [{"document_id": "energia-solar", "text": "a geração distribuída foi regulamentada pela Resolução Normativa 482 da ANEEL"}]},
+    {"code": "Q3", "text": "Quantas unidades geradoras possui a usina de Itaipu e qual é a sua potência instalada?",
+     "expected_answer": "Itaipu possui 20 unidades geradoras e potência instalada de 14.000 megawatts.",
+     "answer_type": "extraction",
+     "gold_passages": [{"document_id": "hidreletricas", "text": "Ela possui 20 unidades geradoras e potência instalada de 14.000 megawatts"}]},
+    {"code": "Q4", "text": "Onde foi instalado o primeiro aerogerador do Brasil?",
+     "expected_answer": "Em Fernando de Noronha, em 1992.",
+     "answer_type": "extraction",
+     "gold_passages": [{"document_id": "energia-eolica", "text": "O primeiro aerogerador do país foi instalado em Fernando de Noronha em 1992"}]},
+    {"code": "Q5", "text": "Qual tipo de turbina hidráulica é indicado para quedas muito altas?",
+     "expected_answer": "As turbinas Pelton.",
+     "answer_type": "extraction"},
+    {"code": "Q6", "text": "Como a temperatura afeta a eficiência dos painéis solares?",
+     "answer_type": "reasoning"}
+  ]
+}
